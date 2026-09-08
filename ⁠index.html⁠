@@ -673,13 +673,14 @@ document.addEventListener("touchmove", function(e) {
   /* =========================
    OFFLINE CACHE REGISTRATION
 ========================= */
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => { navigator.serviceWorker.register('https://raw.githubusercontent.com/alands713-blip/blogger-offline/refs/heads/main/sw.js')
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
       .then((reg) => console.log('Offline Ready!', reg.scope))
       .catch((err) => console.error('Service Worker Error:', err));
   });
 }
-  
+
 </script>
 </body>
 </html>
